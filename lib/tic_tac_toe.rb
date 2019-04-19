@@ -37,10 +37,11 @@ end
 
 # Define your play method below
 def play(board)
-turn = 0
-  while turn < 9
-      turn(board)
-      turn +=1
+  turn(board) until over?(board)
+    if won?(board)
+      puts "congradulations #{winner(board)}!"
+    elsif draw?(board)
+      puts "Cat's Game!"
   end
 end
 
